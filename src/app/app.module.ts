@@ -5,7 +5,10 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { JsonpModule } from '@angular/http';
 
-import { MaterialModule } from '@angular/material';
+import {
+  MaterialModule, MdToolbarModule, MdButtonModule, MdCardModule, MdSidenavModule,
+  MdInputModule, MdRadioModule, MdListModule, MdCheckboxModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { QuestionnaireService } from './questionnaire.service';
@@ -15,6 +18,7 @@ import { SearchQuestionComponent } from './types/search-question/search-question
 import { SingleselectionQuestionComponent } from './types/singleselection-question/singleselection-question.component';
 import { ValueinsertQuestionComponent } from './types/valueinsert-question/valueinsert-question.component';
 import { MultiselectQuestionComponent } from './types/multiselect-question/multiselect-question.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const appRoutes: Routes = [
   //{ path: '', component: HomeComponent },
@@ -37,7 +41,15 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    MaterialModule.forRoot(),
+    BrowserAnimationsModule,
+    MdToolbarModule,
+    MdButtonModule,
+    MdCardModule,
+    MdSidenavModule,
+    MdInputModule,
+    MdRadioModule,
+    MdListModule,
+    MdCheckboxModule,
     JsonpModule,
     ReactiveFormsModule
   ],
