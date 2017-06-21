@@ -95,7 +95,7 @@ export class QuestionnaireService {
 
     console.log("search received: " +ns +" :: " + term);
 
-    var search = new URLSearchParams()
+    let search = new URLSearchParams()
     search.set('ns', ns);
     search.set('search', term);
 

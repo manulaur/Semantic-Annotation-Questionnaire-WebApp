@@ -12,6 +12,7 @@ export class EndpointSettings {
   private static DISCOVER       : string = '/discover';
   private static DRILLDOWN      : string = '/drilldown';
   private static SEARCH         : string = '/search?';
+  private static INSERT         : string = '/insert?';
 
   public static getQuestionnaireEndpoint() :string {
     return EndpointSettings.ENDPOINT + EndpointSettings.QUESTIONNAIRE;
@@ -27,6 +28,10 @@ export class EndpointSettings {
 
   public static getSearchEndpoint() :string {
     return EndpointSettings.ENDPOINT + EndpointSettings.SEARCH;
+  }
+
+  public static getInsertEndpoint() :string {
+    return EndpointSettings.ENDPOINT + EndpointSettings.INSERT;
   }
 
 

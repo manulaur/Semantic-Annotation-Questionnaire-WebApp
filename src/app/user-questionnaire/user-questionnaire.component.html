@@ -1,0 +1,38 @@
+<md-sidenav-container fullscreen>
+  <md-toolbar color="default">
+    <button md-raised-button (click)="startNewQuestionnaire()">Start New Questionnaire</button>
+    <span class="example-fill-remaining-space"></span>
+  </md-toolbar>
+
+  <md-sidenav-container class="example-container">
+
+    <service-discovery *ngIf="!(qService.completed$ | async)"></service-discovery>
+
+    <div class="example-sidenav-content">
+
+      <questionnaire-item *ngIf="!(qService.completed$ | async)" [qItem]="qItem"></questionnaire-item>
+      <div *ngIf="(qService.completed$ | async)">
+        <md-card class="example-card">
+          <md-card-header>
+            <md-card-title>Questionnaire Completed</md-card-title>
+            <md-card-subtitle>Cloud Services based on the answered questions:</md-card-subtitle>
+          </md-card-header>
+          <md-card-content>
+            <md-list>
+              <div *ngFor="let service of (qService.serviceData$ | async)">
+                <md-list-item>
+                  {{service.name}}
+                </md-list-item>
+                <md-divider></md-divider>
+              </div>
+            </md-list>
+          </md-card-content>
+          <md-card-actions>
+            <button md-raised-button (click)="startNewQuestionnaire()">Start New Questionnaire</button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </div>
+
+  </md-sidenav-container>
+</md-sidenav-container>
