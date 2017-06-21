@@ -39,7 +39,8 @@ export class QuestionnaireService {
   }
 
   private queryQuestionnaire(content:QuestionnaireModel): void {
-    //commented for development purpose
+    //perform the two calls for /questionnaire and /discover
+
     this.queryServices(content);
     this.http.post(EndpointSettings.getQuestionnaireEndpoint(), JSON.stringify(content))
       .map(response => response.json()).subscribe(
@@ -49,6 +50,7 @@ export class QuestionnaireService {
           this.questionnaireSource = data;
           this.questionnaireBehavior.next(this.questionnaireSource);
           this.completed$ = Observable.of(this.questionnaireSource.completed);
+          //look for the last quuestionnaire item and return it - so that the last question is alsqays displayed
           this.setSelectedQItem(this.questionnaireSource.questionItemList.find(x => x.questionID ===this.questionnaireSource.lastQuestionID));
 
     }, error => console.log('Could not query the questionnaire'));
