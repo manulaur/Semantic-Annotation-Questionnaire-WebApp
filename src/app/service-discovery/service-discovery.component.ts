@@ -9,11 +9,11 @@ import {forEach} from "@angular/router/src/utils/collection";
   selector: 'service-discovery',
   templateUrl: './service-discovery.component.html',
   styleUrls: ['./service-discovery.component.css'],
-  //providers: [QuestionnaireService]
+  // providers: [QuestionnaireService]
 })
 export class ServiceDiscoveryComponent implements OnInit {
   constructor(
-    private qService:QuestionnaireService
+    private qService: QuestionnaireService
   ) {
   }
 

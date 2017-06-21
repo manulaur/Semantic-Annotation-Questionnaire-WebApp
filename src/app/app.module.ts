@@ -19,11 +19,15 @@ import { SingleselectionQuestionComponent } from './types/singleselection-questi
 import { ValueinsertQuestionComponent } from './types/valueinsert-question/valueinsert-question.component';
 import { MultiselectQuestionComponent } from './types/multiselect-question/multiselect-question.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AdminInsertCloudServiceComponent} from './admin-insert-cloud-service/admin-insert-cloud-service.component';
+import { UserQuestionnaireComponent } from './user-questionnaire/user-questionnaire.component';
 
 const appRoutes: Routes = [
   //{ path: '', component: HomeComponent },
   //{ path: '**', redirectTo: '' },
+  { path: 'admin/insert', component: AdminInsertCloudServiceComponent},
   { path: 'question/:id', component: QuestionnaireItemComponent },
+  { path: 'user/questionnaire', component: UserQuestionnaireComponent },
 ];
 
 @NgModule({
@@ -35,6 +39,8 @@ const appRoutes: Routes = [
     SingleselectionQuestionComponent,
     ValueinsertQuestionComponent,
     MultiselectQuestionComponent,
+    AdminInsertCloudServiceComponent,
+    UserQuestionnaireComponent,
   ],
   imports: [
     BrowserModule,
