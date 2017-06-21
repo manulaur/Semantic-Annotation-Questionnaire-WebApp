@@ -9,7 +9,7 @@
   <service-discovery *ngIf="!(qService.completed$ | async)"></service-discovery>
 
   <div class="example-sidenav-content">
-//Questionnaire Completed or
+
     <questionnaire-item *ngIf="!(qService.completed$ | async)" [qItem]="qItem"></questionnaire-item>
     <div *ngIf="(qService.completed$ | async)">
       <md-card class="example-card">
